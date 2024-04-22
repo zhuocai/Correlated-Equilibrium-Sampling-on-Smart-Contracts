@@ -81,6 +81,15 @@ export default async function buildPoseidon() {
     return poseidon;
 }
 
+// let poseidon = await buildPoseidon();
+// const res1 = poseidon([1, 2]);
+// console.log(poseidon.F.toString(res1, 16));
+
 let poseidon = await buildPoseidon();
-const res1 = poseidon([1, 2]);
-console.log(poseidon.F.toString(res1, 16));
+const res2 = poseidon([2, 2, 1, 2]);
+console.log(poseidon.F.toString(res2, 16));
+
+// let poseidon = await buildPoseidon();
+// const res3 = poseidon(["21353905736832881724403434788717165287411869115262791897948629296309025827272"]);
+// console.log(res3);
+// console.log(poseidon.F.toString(res3, 16));

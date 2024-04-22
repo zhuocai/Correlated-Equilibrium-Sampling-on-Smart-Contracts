@@ -1,5 +1,6 @@
 pragma circom 2.0.0;
-include "../exp_elliptic/circom-ecdsa/node_modules/circomlib/circuits/comparators.circom";
+// include "../exp_elliptic/circom-ecdsa/node_modules/circomlib/circuits/comparators.circom";
+include "../circomlib/circuits/comparators.circom";
 /*This circuit template checks that array B is the permutation of array A.*/  
 
 

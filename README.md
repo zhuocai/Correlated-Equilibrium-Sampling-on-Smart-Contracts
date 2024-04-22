@@ -10,9 +10,9 @@ The project consists of the following components:
 
 `hash_commitment`: Given an input array and its commitment, proves that the poseidon hash of the array equals the commitment. 
 
-`permutation`: Given an array $X$ and $\tilde{X}$, proves that $\tilde{X}$ is the permutation of $X$.
+`permutation`: Given an array $`X`$ and $`\tilde{X}`$, proves that $`\tilde{X}`$ is the permutation of $`X`$.
 
-`select_array`: Given the set of aligned arrays $\{X_a\}_{a\in A_1}$, proves that the array is chosen correctly $X = X_{x_r}$. 
+`select_array`: Given the set of aligned arrays $`\{X_a\}_{a\in A_1}`$, proves that the array is chosen correctly $`X = X_{x_r}`$. 
 
 `protocol`: Combines several proof components to produce a single proof.
 

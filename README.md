@@ -6,6 +6,8 @@ This repository implements the generation of zk-SNARKs proofs for Oblivious Tran
 
 The project consists of the following components:
 
+`encryption`: Given an array $`\tilde{X}`$ and its encryption $`e`$, public keys $`y`$ and random numbers $`\gamma`$, proves that encryption of $`\tilde{X}`$ equals $`e`$. 
+
 `exp_elliptic`: Given private and public key pairs, proves that public key corresponds to the private key. 
 
 `hash_commitment`: Given an input array and its commitment, proves that the poseidon hash of the array equals the commitment. 

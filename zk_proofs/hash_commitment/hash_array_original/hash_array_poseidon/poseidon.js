@@ -82,14 +82,92 @@ export default async function buildPoseidon() {
 }
 
 // let poseidon = await buildPoseidon();
-// const res1 = poseidon([1, 2]);
+// const res1 = poseidon([1, 2, 3, 4]);
 // console.log(poseidon.F.toString(res1, 16));
 
-let poseidon = await buildPoseidon();
-const res2 = poseidon([2, 2, 1, 2]);
-console.log(poseidon.F.toString(res2, 16));
+// let poseidon = await buildPoseidon();
+// const res2 = poseidon([2, 2, 1, 2]);
+// console.log(poseidon.F.toString(res2, 16));
 
 // let poseidon = await buildPoseidon();
 // const res3 = poseidon(["21353905736832881724403434788717165287411869115262791897948629296309025827272"]);
 // console.log(res3);
 // console.log(poseidon.F.toString(res3, 16));
+let poseidon = await buildPoseidon();
+const res3 = poseidon(["33353905736832881724403434788717165287411869115262791897948629296309025827233"]);
+console.log(res3);
+console.log(poseidon.F.toString(res3, 16));
+
+
+// let poseidon = await buildPoseidon();
+// const res1 = poseidon(["0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f86",
+// "0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f87",
+// "0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f88",
+// "0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f89"]);
+// console.log(poseidon.F.toString(res1, 16));
+
+// var pk1s = [[[
+//     "3206263855840730682",
+//     "9975927634690586045"
+//     ],
+//     [
+//     "17386009699530582858",
+//     "15758004313402970226"
+//     ],
+//     [
+//     "17582259918375165007",
+//     "16905884769780094067"
+//     ],
+//     [
+//     "14556386302160438524",
+//     "15778416801092927012"
+//     ]],
+//     [
+//         [ "1203612593502003649", "18251030406463011143" ],
+//         [ "14029712340218102059", "15925426719904590980" ],
+//         [ "14966161060974310615", "8562823132820424434" ],
+//         [ "9328043236777212133", "16085754266872532303" ]
+//       ]
+      
+// ]
+
+// let poseidon = await buildPoseidon();
+
+// var pk1s_arr = [];
+// for (var i=0; i<pk1s.length; i++) {
+//     for (var j=0; j<4; j++) {
+//         pk1s_arr.push(pk1s[i][j][0]);
+//         pk1s_arr.push(pk1s[i][j][1]);
+//     } 
+// }
+// console.log(pk1s_arr);
+
+// const res1 = poseidon(pk1s_arr);
+// console.log(poseidon.F.toString(res1, 16));
+
+// var rand = [[
+//     "4264418248858902731",
+//     "1577798531958286548",
+//     "12070104388605992963",
+//     "17679657645462206226"
+//   ],
+//   [
+//     "4264418248858902731",
+//     "1577798531958286548",
+//     "12070104388605992963",
+//     "17679657645462206226"
+//   ]
+// ]
+    
+//     let poseidon = await buildPoseidon();
+    
+//     var rand_arr = [];
+//     for (var i=0; i<rand.length; i++) {
+//         for (var j=0; j<4; j++) {
+//             rand_arr.push(rand[i][j]);
+//         } 
+//     }
+//     console.log(rand_arr);
+    
+//     const res1 = poseidon(rand_arr);
+//     console.log(poseidon.F.toString(res1, 16));

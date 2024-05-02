@@ -144,5 +144,5 @@ template protocol(N, logN, n, k) {
 
 }
 
-component main {public [comm_X, comm_X_, c_OT, comm_e, comm_y, comm_gamma]} = protocol(4, 2, 64, 4);
+component main {public [comm_X, comm_X_, c_OT, comm_e, comm_y, comm_gamma, comm_r_p]} = protocol(4, 2, 64, 4);
 // component main {public [comm_X, comm_X_]} = protocol(2, 1, 64, 4);

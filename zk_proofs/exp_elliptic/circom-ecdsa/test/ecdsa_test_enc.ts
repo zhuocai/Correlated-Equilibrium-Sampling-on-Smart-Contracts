@@ -189,9 +189,10 @@ describe("ECDSAPrivToPub", async function () {
     var X_: Array<any> = [1,2,3,4];
     for (var i=0; i<X_.length; i++) {
         var sum: any = 0;
+        var bin = i.toString(2).padStart(2, '0');
 
         for (var k = 1; k < 3; k++) {
-            var bin = k.toString(2).padStart(2, '0');;
+            // var bin = k.toString(2).padStart(2, '0');;
             var j_k =  parseInt(bin.charAt(k-1));
             // console.log(bin);
             // console.log(j_k);

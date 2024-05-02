@@ -17,13 +17,13 @@ template encryption(N, logN, n, k) {
     signal input rand[logN][k];
 
     signal y_k_j_k[N][logN][2][k];
-    component num_to_bits[N][logN];
+    component num_to_bits[N];
 
     component exp[N][logN];
     signal res_exp[N][logN][2][k];
 
     signal j_k[N][logN];
-    signal bin[N][logN][logN];
+    signal bin[N][logN];
 
     component poseidon[N][logN];
     signal res_poseidon[N][logN];
@@ -41,15 +41,16 @@ template encryption(N, logN, n, k) {
     for (var idx = 0; idx < N; idx++) {
         sum[idx] = 0;
 
+        num_to_bits[idx] = Num2Bits(logN);
+        num_to_bits[idx].in <== idx;
+
+        for (var i=0; i<logN; i++) {
+            bin[idx][i] <== num_to_bits[idx].out[logN-i-1];
+        }
+
         for (var m = 1; m < logN+1; m++) {
-            num_to_bits[idx][m-1] = Num2Bits(logN);
-            num_to_bits[idx][m-1].in <== m;
-            
-            for (var i=0; i<logN; i++) {
-                bin[idx][m-1][i] <== num_to_bits[idx][m-1].out[logN-i-1];
-            }
-            
-            j_k[idx][m-1] <== bin[idx][m-1][m-1];
+
+            j_k[idx][m-1] <== bin[idx][m-1];
 
             for (var i=0; i<2; i++) {
                 for (var j=0; j<k; j++) {
@@ -83,7 +84,7 @@ template encryption(N, logN, n, k) {
             }
 
             for (var i=2*k; i<2*k+logN; i++) {
-                poseidon[idx][m-1].inputs[i] <== bin[idx][m-1][i-2*k];
+                poseidon[idx][m-1].inputs[i] <== bin[idx][i-2*k];
             }
             
 
@@ -94,8 +95,8 @@ template encryption(N, logN, n, k) {
 
         res_enc[idx] <== sum[idx] + X_[idx];
 
+        log(res_enc[idx]);
         res_enc[idx] === enc[idx];
-        log(enc[idx]);
     }
 }
 

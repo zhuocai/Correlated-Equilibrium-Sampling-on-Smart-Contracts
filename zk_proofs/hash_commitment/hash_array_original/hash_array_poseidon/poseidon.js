@@ -93,18 +93,18 @@ export default async function buildPoseidon() {
 // const res3 = poseidon(["21353905736832881724403434788717165287411869115262791897948629296309025827272"]);
 // console.log(res3);
 // console.log(poseidon.F.toString(res3, 16));
-let poseidon = await buildPoseidon();
-const res3 = poseidon(["33353905736832881724403434788717165287411869115262791897948629296309025827233"]);
-console.log(res3);
-console.log(poseidon.F.toString(res3, 16));
-
-
 // let poseidon = await buildPoseidon();
-// const res1 = poseidon(["0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f86",
-// "0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f87",
-// "0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f88",
-// "0x1ea6414205c5435946cbe5e4d1173f4b647d481b50e92f3166a209d7d1853f89"]);
-// console.log(poseidon.F.toString(res1, 16));
+// const res3 = poseidon(["33353905736832881724403434788717165287411869115262791897948629296309025827233"]);
+// console.log(res3);
+// console.log(poseidon.F.toString(res3, 16));
+
+
+let poseidon = await buildPoseidon();
+const res1 = poseidon(["0x125bc38dbc1b3c15186dd94890b5069322e6b2fb920c66fee6f241520504441d",
+"0x7032059c1fd4d4ce6b8825ed5fcd8211dcf3a1637ba15c43dd71a9c8c705170",
+"0x1eac88c2408b4706187609c3a05c1895e806a9a2750a7de2cdb30d20e48e16ab",
+"0x1a9550569bc218a9f66711a85c18019b7028eb4f39e14191a2b055830d0a805f"]);
+console.log(poseidon.F.toString(res1, 16));
 
 // var pk1s = [[[
 //     "3206263855840730682",

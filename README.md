@@ -18,6 +18,11 @@ The project consists of the following components:
 
 `protocol`: Combines several proof components to produce a single proof.
 
+Reference to the paper: 
+Our Second Protocol -> Strategy of Alice.
+1. In Commit step, a SNARK proof $\pi_X$ showing that $X=X_{x_r}$, the array $X$ is chosen correctly is implemented in `select_array`.
+2. In SendData step, a zk-SNARK proof $\pi$ for the following relationship (the witness consists of all relevant vectors $(X,\tilde{X}, \mathbf{y}, \gamma, \mathbf{e})$ and secret information $r$, $r_p$): 1) all commitments are computed correctly, 2) $\tilde{X}$ is a permutation of $X$, 3) $\mathbf{e}$ is the encryption of $\tilde{X}$ under public keys $\mathbf{y}$ and random numbers $\gamma$ is implemented in `protocol` that uses components `hash_commitment` for proving 1), `permutation` for 2), and `encryption` for 3).  
+
 ## Working with circom
 Generating a zk-SNARK proof consists of several steps. 
 
